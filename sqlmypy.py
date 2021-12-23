@@ -200,7 +200,7 @@ def decl_info_hook(ctx: DynamicClassDefContext) -> None:
 
     info = TypeInfo(SymbolTable(), class_def, ctx.api.cur_mod_id)
     class_def.info = info
-    obj = ctx.api.builtin_type('builtins.object')
+    obj = ctx.api.named_type('builtins.object')
     info.bases = cls_bases or [obj]
     try:
         calculate_mro(info)
